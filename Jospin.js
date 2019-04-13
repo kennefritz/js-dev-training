@@ -1,3 +1,4 @@
+/**************** TP1: palindrome  ********************************************/
 function palindrome(str) {
   let str1 = str.toLowerCase().replace(/[^a-zA-Z0-9]/g, "");
   let str2 = str1.split("").reverse().join("");
@@ -7,7 +8,8 @@ function palindrome(str) {
 palindrome("eye");
 
 
-//roman conversion
+/**************** TP1: palindrome  ********************************************/
+public function convertToRoman(num){
 let nb = num;
   let romanChars = ['I', 'V', 'X', 'L', 'C', 'D', 'M'];
   let roman = "";
@@ -72,3 +74,22 @@ function putRomanChar(number, index, romanChars){
 }
 
 convertToRoman(684);
+
+/**************** TP3:   rot13 ********************************************/
+function rot13(str) { // LBH QVQ VG!
+  let res = '';
+  for(let i=0; i<str.length; i++){
+    let asciiCode = str[i].charCodeAt(0);
+    if(65 <= asciiCode && asciiCode <= 90){
+      let nextAscii = (asciiCode+13<=90) ? asciiCode+13 : 65+asciiCode+12-90;
+      res += '' + String.fromCharCode(nextAscii);
+    }else{
+      res += str[i];
+    }
+  }console.log(res);
+  return res;
+}
+
+// Change the inputs below to test
+rot13("SERR PBQR PNZC");
+
